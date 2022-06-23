@@ -42,7 +42,7 @@ const AddCustomValue = () => {
         helperText: "",
       })
 
-      dispatch(changeValue(+e.target.numberInput.value))
+      dispatch({ type: "changeValue", payload: +e.target.numberInput.value })
 
       return
     }

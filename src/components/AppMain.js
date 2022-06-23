@@ -1,5 +1,6 @@
 import { Container, Box } from "@mui/material"
 import AddCustomValue from "./AddCustomValue"
+import ArrData from "./ArrData"
 import IncrementDecrement from "./IncrementDecrement"
 
 const AppMain = () => {
@@ -10,6 +11,7 @@ const AppMain = () => {
       <Container>
         <IncrementDecrement />
         <AddCustomValue />
+        <ArrData />
       </Container>
     </Box>
   )
