@@ -10,6 +10,7 @@ const defaultState = {
 */
 const ADD_PERSON = "ADD_PERSON"
 const REMOVE_PERSON = "REMOVE_PERSON"
+const LOAD_PERSONS = "LOAD_PERSONS"
 
 const arrayReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -20,6 +21,8 @@ const arrayReducer = (state = defaultState, action) => {
         ...state,
         arrVal: state.arrVal.filter((person) => person.name !== action.payload.name),
       }
+    case LOAD_PERSONS:
+      return { ...state, arrVal: action.payload }
     default:
       return state
   }
@@ -34,6 +37,10 @@ const removePersonAction = (payload) => ({
   type: REMOVE_PERSON,
   payload: payload,
 })
+const loadPersonsAction = (payload) => ({
+  type: LOAD_PERSONS,
+  payload,
+})
 
-export { addPersonAction, removePersonAction }
+export { addPersonAction, removePersonAction, loadPersonsAction }
 export default arrayReducer

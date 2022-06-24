@@ -1,8 +1,14 @@
-import { combineReducers, configureStore, createStore } from "@reduxjs/toolkit"
+import {
+  applyMiddleware,
+  combineReducers,
+  configureStore,
+  createStore,
+} from "@reduxjs/toolkit"
 import counterReducer from "./counterSlice"
 import valueReducer from "./valueReducer"
 import arrayReducer from "./arrayReducer"
 import { composeWithDevTools } from "@redux-devtools/extension"
+import thunk from "redux-thunk"
 
 /*
   store он же state - хранилище данных
@@ -28,6 +34,6 @@ const rootReducer = combineReducers({
 })
 
 // store is just an object
-const store = createStore(rootReducer, composeWithDevTools())
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 export default store

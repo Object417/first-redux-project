@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Divider,
   FormControl,
@@ -9,8 +10,10 @@ import {
   Typography,
 } from "@mui/material"
 import { useSelector, useDispatch } from "react-redux"
-import { removePersonAction } from "../store/arrayReducer"
+import { loadPersonsAction, removePersonAction } from "../store/arrayReducer"
+import { loadPersons } from "../store/asyncActions/loadPersons"
 import ArrDataForm from "./ArrDataForm"
+import { loadDataMyFunc } from "../store/asyncActions/loadDataMyFunc"
 
 const ArrData = () => {
   /* Получаем данные
@@ -19,6 +22,12 @@ const ArrData = () => {
   */
   const myArr = useSelector((state) => state.arr.arrVal)
   const dispatch = useDispatch()
+
+  /* const loadUsersMyFunc = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => dispatch(loadPersonsAction(data)))
+  } */
 
   return (
     <Box>
@@ -38,7 +47,23 @@ const ArrData = () => {
               ))}
             </List>
           ) : (
-            <Typography variant="body1">Array is empty</Typography>
+            <>
+              <Typography variant="body1">Array is empty</Typography>
+              <Button onClick={() => dispatch(loadPersons())}>
+                Load users from the server
+              </Button>
+              <Button
+                onClick={() =>
+                  loadDataMyFunc(
+                    "https://jsonplaceholder.typicode.com/users",
+                    dispatch,
+                    loadPersonsAction
+                  )
+                }
+              >
+                My Own Load Users Function
+              </Button>
+            </>
           )}
         </Box>
 
