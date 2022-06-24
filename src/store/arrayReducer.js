@@ -19,7 +19,9 @@ const arrayReducer = (state = defaultState, action) => {
     case REMOVE_PERSON:
       return {
         ...state,
-        arrVal: state.arrVal.filter((person) => person.name !== action.payload.name),
+        arrVal: state.arrVal.filter(
+          (person) => person.name !== action.payload.name
+        ),
       }
     case LOAD_PERSONS:
       return { ...state, arrVal: action.payload }

@@ -5,7 +5,7 @@ const defaultState = {
 // reducer is just a function
 const valueReducer = (state = defaultState, action) => {
   // state - is out state (store)
-  // action is just an object: {type: "ACTION_TYPE", payload: "some data" || null}
+  // action is just an object: {type: "ACTION_TYPE", payload?: "some data"}
 
   switch (action.type) {
     case "increment":

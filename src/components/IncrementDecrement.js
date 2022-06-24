@@ -5,11 +5,6 @@ import { increment, decrement } from "../store/counterSlice"
 const IncrementDecrement = () => {
   console.log("BUTTONS RENDER")
 
-  /* // Modern example 
-  const count = useSelector((state) => state.counter.value),
-    dispatch = useDispatch()
-  */
-
   // Legacy code below
   const dispatch = useDispatch() // get dispatcher
   const count = useSelector((state) => state.value.value) // get value from the store
@@ -30,7 +25,11 @@ const IncrementDecrement = () => {
         justifyContent: "center",
       }}
     >
-      <Typography component="h2" variant="h3" sx={{ width: "100%", textAlign: "center" }}>
+      <Typography
+        component="h2"
+        variant="h3"
+        sx={{ width: "100%", textAlign: "center" }}
+      >
         {count}
       </Typography>
       <Button

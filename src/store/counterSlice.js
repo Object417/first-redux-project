@@ -10,7 +10,13 @@ const counterSlice = createSlice({
       state.value += 1
     },
     decrement: (state) => {
-      // 2. Return a new state
+      // 2. OR Return a new state
+      /*
+        Notice!
+        myReducer: (state, action) => state.value = action.payload // INCORRECT
+        myReducer: (state, action) => { state.value = action.payload } // CORRECT
+        because arrow functions without {} by default returns everything what's inside
+      */
       return { ...state, value: state.value - 1 }
     },
     changeValue: (state, action) => {

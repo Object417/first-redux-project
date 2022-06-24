@@ -3,7 +3,7 @@
   "singleAttributePerLine": false,
   "bracketSameLine": false,
   "bracketSpacing": true,
-  "printWidth": 90,
+  "printWidth": 80,
   "arrowParens": "always",
   "singleQuote": false,
   "tabWidth": 2,

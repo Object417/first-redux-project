@@ -51,7 +51,12 @@ const ArrDataForm = () => {
           value={fieldVal}
           onChange={fieldOnChange}
         />
-        <Button type="submit" variant="contained" sx={{ mr: 1 }} onClick={addPerson}>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{ mr: 1 }}
+          onClick={addPerson}
+        >
           Add person
         </Button>
         <Button type="button" variant="contained" onClick={removePerson}>
