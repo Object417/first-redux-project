@@ -9,9 +9,11 @@ import {
   removePersonAction,
   starPersonAction,
 } from "./legacy-redux/actionCreators/listActionCreator"
+import { getList } from "./legacy-redux/asyncThunks/getList"
 
 const LegacyApp = () => {
-  const people = useSelector((state) => state.list)
+  const people = useSelector((state) => state.list.list)
+  const status = useSelector((state) => state.list.status)
   const dispatch = useDispatch()
 
   console.log("LegacyApp RENDER")
@@ -47,6 +49,8 @@ const LegacyApp = () => {
         removePersonAction={removePersonAction}
         people={people}
         dispatch={dispatch}
+        getList={getList}
+        status={status}
       />
     </Box>
   )

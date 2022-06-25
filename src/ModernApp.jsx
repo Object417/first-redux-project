@@ -9,9 +9,11 @@ import {
   removePerson,
   starPerson,
 } from "./modern-redux/slices/listSlice"
+import { getList } from "./modern-redux/asyncThunks/getList"
 
 const ModernApp = () => {
-  const people = useSelector((state) => state.list)
+  const people = useSelector((state) => state.list.list)
+  const status = useSelector((state) => state.list.status)
   const dispatch = useDispatch()
 
   console.log("ModernApp RENDER")
@@ -47,6 +49,8 @@ const ModernApp = () => {
         removePersonAction={removePerson}
         dispatch={dispatch}
         people={people}
+        getList={getList}
+        status={status}
       />
     </Box>
   )

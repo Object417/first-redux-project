@@ -1,4 +1,4 @@
-import { Star, StarBorder, Delete, DeleteOutline } from "@mui/icons-material"
+import { Star, StarBorder, DeleteOutline } from "@mui/icons-material"
 import {
   Alert,
   Avatar,
@@ -32,10 +32,9 @@ const PeopleList = ({
     <List
       dense={true}
       sx={{
-        overflow: "auto",
-        maxHeight: "25rem",
+        overflow: "auto scroll",
         py: 0,
-        flexGrow: 1,
+        flex: "1 1 50%",
       }}
     >
       <ListSubheader
