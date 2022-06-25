@@ -1,15 +1,13 @@
 import { Box, Button, TextField } from "@mui/material"
 import randomColor from "randomcolor"
 import React, { useState } from "react"
-import { useDispatch } from "react-redux"
 
 const PeopleListControls = ({
   addPersonAction,
   removePersonAction,
   people,
+  dispatch,
 }) => {
-  const dispatch = useDispatch()
-
   const [fieldValue, setFieldValue] = useState("")
   const fieldOnChange = (e) => {
     setFieldValue(e.target.value)
@@ -22,13 +20,15 @@ const PeopleListControls = ({
       name: e.target.nameField.value,
       id: Date.now(),
       bgcolor: randomColor(),
+      starred: false,
     }
+
     dispatch(addPersonAction(person))
 
     setFieldValue("")
   }
   const formOnKeyUp = (e) => {
-    if (e.key === "Backspace") {
+    if (e.key === "Backspace" && e.ctrlKey) {
       if (people.length === 0) {
         return
       }
@@ -57,8 +57,11 @@ const PeopleListControls = ({
         autoFocus
         sx={{ mr: 1, flexGrow: 1 }}
       />
-      <Button type="submit" variant="contained">
+      <Button type="submit" variant="contained" sx={{ mr: 1 }}>
         Add person
+      </Button>
+      <Button type="button" variant="contained">
+        Load people
       </Button>
     </Box>
   )

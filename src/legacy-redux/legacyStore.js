@@ -6,9 +6,9 @@ import listReducer from "./reducers/listReducer"
 const rootReducer = combineReducers({
   list: listReducer,
 })
-const store = createStore(
+const legacyStore = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 )
 
-export default store
+export default legacyStore

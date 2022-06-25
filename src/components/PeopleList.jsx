@@ -7,20 +7,18 @@ import {
   ListItemAvatar,
   ListItemIcon,
   ListItemText,
-  Divider,
   IconButton,
   ListSubheader,
 } from "@mui/material"
 import React from "react"
-import { useDispatch } from "react-redux"
 
 const PeopleList = ({
   people,
   subheader,
   removePersonAction,
   starPersonAction,
+  dispatch,
 }) => {
-  const dispatch = useDispatch()
   const itemOnDelete = (person) => {
     dispatch(removePersonAction(person.id))
   }
@@ -37,6 +35,7 @@ const PeopleList = ({
         overflow: "auto",
         maxHeight: "25rem",
         py: 0,
+        flexGrow: 1,
       }}
     >
       <ListSubheader

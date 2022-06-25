@@ -7,10 +7,10 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import { Container, CssBaseline, Box } from "@mui/material"
 
-import legacyStore from "./legacy-redux/store/store"
+import legacyStore from "./legacy-redux/legacyStore"
 import LegacyApp from "./LegacyApp"
 
-import modernStore from "./modern-redux/store"
+import modernStore from "./modern-redux/modernStore"
 import ModernApp from "./ModernApp"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
