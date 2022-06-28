@@ -220,6 +220,8 @@ export default rootReducer
 
 ## **Redux Thunk and async actions**
 
+![Redux Thunk Logo](https://miro.medium.com/max/1200/1*Fqp-auY3RgSfrIAYFekoOQ.jpeg)
+
 Redux Thunk is a middleware. You can create our own async functions
 by passing them the `dispatch` as an argument. Redux Thunk will do it for you
 so all the logic for working with the state will be outside the components.
@@ -285,6 +287,8 @@ export function addIfOdd() {
 ```
 
 ## **Redux Toolkit**
+
+![RTK Logo](https://res.cloudinary.com/practicaldev/image/fetch/s---Tra74SQ--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/b3sg8u2il9x7aq8l64v6.png)
 
 It's simple and **very** useful tool when you work with Redux.
 It will greatly reduce routine and as a result will save your time (no stupid typos anymore!)
@@ -456,3 +460,5 @@ There's also **RTK Query** tool included in **Redux Toolkit**.
 > It's a powerful data fetching and caching tool.
 > It is designed to simplify common cases for loading data in a web application,
 > eliminating the need to hand-write data fetching & caching logic yourself.
+
+![RTK Query](https://blog.openreplay.com/static/b9255ea7a1a0ce9545aa9645d9640666/6050d/hero.png)
