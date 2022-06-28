@@ -25,8 +25,10 @@ const listSlice = createSlice({
     builder
       .addCase(getList.pending, (state, action) => {
         state.status = "loading"
+        console.log(action)
       })
       .addCase(getList.fulfilled, (state, action) => {
+        console.log(action)
         const list = action.payload.users.map((person) => ({
           name: person.firstName + " " + person.lastName,
           id: person.id,
@@ -39,6 +41,7 @@ const listSlice = createSlice({
       })
       .addCase(getList.rejected, (state, action) => {
         state.status = "error"
+        console.log(action)
       })
   },
 })
